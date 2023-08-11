@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Agregar Producto</title>
+    <style>
+        body {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           min-height: 100vh;
+           margin: 0;
+           background-color: #f0f0f0;
+        }
+
+        form {
+           border: 1px solid #ccc;
+           padding: 20px;
+           width: 300px;
+           background-color: #fff;
+           border-radius: 5px;
+           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+           text-align: center;
+           margin-bottom: 20px;
+           margin-right: 100px;
+           font-size: 24px;
+           color: #333;
+        }
+
+        label, input {
+           display: block;
+           margin-bottom: 10px;
+        }
+
+        button {
+           background-color: #007bff;
+           color: #fff;
+           border: none;
+           padding: 10px 20px;
+           cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+           </style>   
+
 </head>
 <body>
-    <h1>Listado de productos</h1>
+    <h1>Agregar Producto</h1>
+
+    <form action="/api/products" method="post">
+        <label for="productTitle">Nombre del Producto</label>
+        <input type="text" name="productTitle" id="productTitle">
+        <label for="productDescription">Descripcion del Producto</label>
+        <input type="text" name="productDescription" id="productDescription">
+        <label for="productCode">Codigo del Producto</label>
+        <input type="text" name="productCode" id="productCode">
+        <label for="productPrice">Ingrese precio</label>
+        <input type="number" name="productPrice" id="productPrice" min="1" >
+        <label for="productStock">Ingrese el stock</label>
+        <input type="number" name="productStock" id="productStock" min="1" >
+        <label for="productCategory">Ingresar categoria</label>
+        <input type="text" name="productCategory" id ="productCategory">
+        <label for="productThumbnails">Ingrese Url Imagen</label>
+        <input type="text" name="productThumbnails" id="productThumbnails" value="http://placekitten.com/300/300">        
+        <label for="productStatus">Estado del Producto: true</label>
+        <!-- Campo productStatus oculto pero aún presente en el formulario -->
+        <input type="text" name="productStatus" id="productStatus" value="true" style="display: none;">
+        <button type="submit">Agregar Producto</button>
+    </form>
 </body>
 </html>

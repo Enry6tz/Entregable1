@@ -2,8 +2,8 @@ const express = require('express')
 const path = require('path')
 
 
-const productsRouter = require('./routes/products.router')
-const cartsRouter = require('./routes/carts.router')
+const productsRouter = require('./src/routes/products.router')
+const cartsRouter = require('./src/routes/carts.router')
 const app = express()
 const PORT= 8080
 
